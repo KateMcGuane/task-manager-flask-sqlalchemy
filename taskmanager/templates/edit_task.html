@@ -9,7 +9,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                <input id="task_name" name="task_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                <input id="task_name" name="task_name" value="{{ task.task_name }}" minlength="5" maxlength="50" type="text" class="validate" required>
                 <label for="task_name">Task Name</label>
             </div>
         </div>
@@ -18,6 +18,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
                 <textarea id="task_description" name="task_description" minlength="5" maxlength="200" type="text" class="materialize-textarea validate" required>
+                    {{ task.task_description}}
                 </textarea>
                 <label for="task_description">Task Description</label>
             </div>
@@ -26,7 +27,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
+                <input id="due_date" name="due_date" value="{{ task.due_date.strftime('%d %B %Y') }}" type="text" class="datepicker validate" required>
                 <label for="due_date">Due Date</label>
             </div>
         </div>
