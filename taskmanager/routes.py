@@ -15,7 +15,7 @@ def categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method="POST":
+    if request.method == "POST":
         category = Category(category_name=request.form.get("category_name"))
         db.session.add(category)
         db.session.commit()
