@@ -24,6 +24,6 @@ def add_category():
     return render_template("add_category.html")
 
 
-@app.rout("/edit_category", methods=["GET", "POST"])
-def edit_category():
+@app.rout("/edit_category/<int:category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
     return render_template("edit_category.html")
